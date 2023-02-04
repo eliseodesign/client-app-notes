@@ -1,0 +1,8 @@
+@use './navbar';
+@use './hero';
+@use './footer';
+
+.landing{
+  background: var(--black-gradient);
+  height: 100vh;
+}

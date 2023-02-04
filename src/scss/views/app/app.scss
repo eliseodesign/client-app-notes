@@ -1,0 +1,57 @@
+
+@mixin flex-column {
+  display: flex; flex-direction: column;
+
+}
+.app{
+  @include flex-column();
+  max-width: 900px; margin: auto;
+}
+
+.form{
+  @include flex-column();
+}
+
+$primary-color: #316dad;
+$secondary-color: #6c757d;
+.form {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 1rem;
+  padding: 1rem;
+
+  input[type="text"]{
+    grid-column: span 2;
+  }
+  input[type="text"], 
+  input[type="checkbox"] {
+    background-color: transparent;
+    border: 1px solid $secondary-color;
+    border-radius: 5px;
+    padding: 0.5rem;
+    font-size: 1rem;
+    color: #eee;
+    
+  }
+
+  label {
+    font-size: 1rem;
+    color: $primary-color;
+  }
+
+  button {
+    background-color: $primary-color;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    padding: 0.5rem;
+    font-size: 1rem;
+    cursor: pointer;
+  }
+}
+
+@media (max-width: 576px) {
+  .form {
+    grid-template-columns: 1fr;
+  }
+}
